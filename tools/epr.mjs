@@ -8,14 +8,14 @@ export async function main(args=process.argv.slice(2)) {
   try {
     const command=args[0]??'help';
     const values=new Map(),flags=new Set();
-    const flagNames=['--adopt-existing','--offline','--allow-major','--allow-template-change','--accept-capabilities','--allow-quality-change'];
+    const flagNames=['--adopt-existing','--offline','--allow-major','--allow-template-change','--accept-capabilities','--allow-quality-change','--retry-rolled-back'];
     const valueNames=['--root','--target','--source-file','--source-url','--workspace','--receipt','--job','--version'];
     for(let i=1;i<args.length;i++) {
       if(flagNames.includes(args[i])) flags.add(args[i]);
       else {ensure(valueNames.includes(args[i])&&args[i+1]&&!args[i+1].startsWith('--'),`Unknown or incomplete option: ${args[i]}`);values.set(args[i],args[++i]);}
     }
     const root=path.resolve(values.get('--root')??defaultRoot());
-    const options={target:values.get('--target'),adoptExisting:flags.has('--adopt-existing'),offline:flags.has('--offline'),workspace:values.get('--workspace'),receipt:values.get('--receipt'),allowMajor:flags.has('--allow-major'),allowTemplateChange:flags.has('--allow-template-change'),acceptCapabilities:flags.has('--accept-capabilities'),allowQualityChange:flags.has('--allow-quality-change')};
+    const options={target:values.get('--target'),adoptExisting:flags.has('--adopt-existing'),offline:flags.has('--offline'),workspace:values.get('--workspace'),receipt:values.get('--receipt'),allowMajor:flags.has('--allow-major'),allowTemplateChange:flags.has('--allow-template-change'),acceptCapabilities:flags.has('--accept-capabilities'),allowQualityChange:flags.has('--allow-quality-change'),retryRolledBack:flags.has('--retry-rolled-back')};
     ensure(!(values.has('--source-file')&&values.has('--source-url')),'Choose one update source');
     if(command==='install') options.source=values.has('--source-file')?{kind:'local',channel_file:path.resolve(values.get('--source-file'))}:{kind:'https',url:values.get('--source-url')??DEFAULT_CHANNEL};
     else ensure(!values.has('--source-file')&&!values.has('--source-url')&&!values.has('--target'),'Source and target can only be selected at install');
