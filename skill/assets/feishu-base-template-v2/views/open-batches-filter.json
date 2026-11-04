@@ -1,0 +1,1 @@
+{"logic":"and","conditions":[["状态","intersects",["采集中","分析中","待确认","失败"]]]}

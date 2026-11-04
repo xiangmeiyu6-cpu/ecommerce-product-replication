@@ -1,0 +1,18 @@
+[
+  {"name":"分析批次ID","type":"text","description":"商品ID+分析时间或版本号"},
+  {"name":"商品ID","type":"text"},
+  {"name":"分析版本","type":"text"},
+  {"name":"分析范围","type":"select","multiple":true,"options":[{"name":"商品定位"},{"name":"页面策略"},{"name":"用户反馈"},{"name":"竞争力"},{"name":"投放价值"},{"name":"优化建议"},{"name":"复刻策略"}]},
+  {"name":"任务类型","type":"select","multiple":false,"options":[{"name":"仅拆解"},{"name":"拆解并复刻"},{"name":"复检更新"}]},
+  {"name":"状态","type":"select","multiple":false,"options":[{"name":"采集中"},{"name":"分析中"},{"name":"待确认"},{"name":"已完成"},{"name":"失败"}]},
+  {"name":"页面快照说明","type":"text"},
+  {"name":"缺失证据","type":"text"},
+  {"name":"错误记录","type":"text"},
+  {"name":"飞书交付状态","type":"select","multiple":false,"options":[{"name":"待写入"},{"name":"写入中"},{"name":"已验证"},{"name":"受阻"}]},
+  {"name":"写入记录数","type":"number","style":{"type":"plain","precision":0}},
+  {"name":"图片附件数","type":"number","style":{"type":"plain","precision":0}},
+  {"name":"未解决证据缺口数","type":"number","style":{"type":"plain","precision":0}},
+  {"name":"开始时间","type":"datetime","style":{"format":"yyyy-MM-dd HH:mm"}},
+  {"name":"完成时间","type":"datetime","style":{"format":"yyyy-MM-dd HH:mm"}},
+  {"name":"创建时间","type":"created_at","style":{"format":"yyyy-MM-dd HH:mm"}}
+]

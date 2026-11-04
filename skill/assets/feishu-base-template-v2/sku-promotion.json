@@ -1,0 +1,22 @@
+[
+  {"name":"SKU记录ID","type":"text"},
+  {"name":"商品ID","type":"text"},
+  {"name":"分析批次ID","type":"text"},
+  {"name":"SKU名称","type":"text"},
+  {"name":"规格","type":"text"},
+  {"name":"划线价","type":"number","style":{"type":"currency","precision":2,"currency_code":"CNY"}},
+  {"name":"页面售价","type":"number","style":{"type":"currency","precision":2,"currency_code":"CNY"}},
+  {"name":"活动到手价","type":"number","style":{"type":"currency","precision":2,"currency_code":"CNY"}},
+  {"name":"成交价","type":"number","style":{"type":"currency","precision":2,"currency_code":"CNY"}},
+  {"name":"折算单价","type":"number","style":{"type":"currency","precision":2,"currency_code":"CNY"}},
+  {"name":"SKU角色","type":"select","multiple":false,"options":[{"name":"引流款"},{"name":"主推款"},{"name":"利润款"},{"name":"锚点款"},{"name":"复购款"},{"name":"未知"}]},
+  {"name":"赠品内容","type":"text"},
+  {"name":"促销机制","type":"text"},
+  {"name":"价格与优惠条件","type":"text"},
+  {"name":"目标人群","type":"text"},
+  {"name":"页面表达","type":"text"},
+  {"name":"事实或推断","type":"select","multiple":false,"options":[{"name":"页面事实"},{"name":"分析推断"}]},
+  {"name":"限制条件","type":"text"},
+  {"name":"价格获取时间","type":"datetime","style":{"format":"yyyy-MM-dd HH:mm"}},
+  {"name":"SKU证据附件","type":"attachment"}
+]

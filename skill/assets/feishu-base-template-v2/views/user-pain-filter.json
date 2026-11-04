@@ -1,0 +1,1 @@
+{"logic":"and","conditions":[["反馈类型","intersects",["中评","差评","购买顾虑"]]]}

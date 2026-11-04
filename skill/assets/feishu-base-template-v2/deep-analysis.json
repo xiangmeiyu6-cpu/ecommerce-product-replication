@@ -1,0 +1,15 @@
+[
+  {"name":"拆解项ID","type":"text","description":"分析批次+模块+序号"},
+  {"name":"商品ID","type":"text"},
+  {"name":"分析批次ID","type":"text"},
+  {"name":"一级模块","type":"select","multiple":false,"options":[{"name":"商品定位"},{"name":"目标人群"},{"name":"核心需求"},{"name":"使用场景"},{"name":"价格带"},{"name":"页面策略"},{"name":"用户反馈"},{"name":"竞争力"},{"name":"投放价值"},{"name":"优化建议"},{"name":"合规风险"}]},
+  {"name":"二级主题","type":"text"},
+  {"name":"详细结论","type":"text"},
+  {"name":"转化机制","type":"text"},
+  {"name":"支撑证据","type":"text"},
+  {"name":"页面位置","type":"text"},
+  {"name":"结论类型","type":"select","multiple":false,"options":[{"name":"事实"},{"name":"推断"},{"name":"建议"},{"name":"未知"}]},
+  {"name":"复刻分类","type":"select","multiple":false,"options":[{"name":"直接复用"},{"name":"适配后复用"},{"name":"需要测试"},{"name":"避免使用"}]},
+  {"name":"重要度","type":"select","multiple":false,"options":[{"name":"高"},{"name":"中"},{"name":"低"}]},
+  {"name":"排序号","type":"number","style":{"type":"plain","precision":0}}
+]

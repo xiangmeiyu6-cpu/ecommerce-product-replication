@@ -1,0 +1,17 @@
+[
+  {"name":"证据ID","type":"text"},
+  {"name":"商品ID","type":"text"},
+  {"name":"分析批次ID","type":"text"},
+  {"name":"分析章节","type":"text"},
+  {"name":"支持的结论","type":"text"},
+  {"name":"证据类型","type":"select","multiple":false,"options":[{"name":"页面事实"},{"name":"用户事实"},{"name":"外部事实"},{"name":"分析推断"},{"name":"未知"}]},
+  {"name":"原始摘录","type":"text"},
+  {"name":"来源链接","type":"text","style":{"type":"url"}},
+  {"name":"来源位置","type":"text"},
+  {"name":"页面顺序","type":"number","style":{"type":"plain","precision":0}},
+  {"name":"证据附件","type":"attachment"},
+  {"name":"置信度","type":"select","multiple":false,"options":[{"name":"高"},{"name":"中"},{"name":"低"}]},
+  {"name":"冲突说明","type":"text"},
+  {"name":"是否需补证","type":"checkbox"},
+  {"name":"获取时间","type":"datetime","style":{"format":"yyyy-MM-dd HH:mm"}}
+]

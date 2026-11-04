@@ -1,0 +1,20 @@
+[
+  {"name":"反馈记录ID","type":"text"},
+  {"name":"商品ID","type":"text"},
+  {"name":"分析批次ID","type":"text"},
+  {"name":"反馈类型","type":"select","multiple":false,"options":[{"name":"好评"},{"name":"中评"},{"name":"差评"},{"name":"购买顾虑"},{"name":"用户提问"},{"name":"分析推断"},{"name":"未知"}]},
+  {"name":"用户原话","type":"text"},
+  {"name":"归一化主题","type":"text"},
+  {"name":"使用场景","type":"text"},
+  {"name":"购买原因","type":"text"},
+  {"name":"痛点或顾虑","type":"text"},
+  {"name":"出现频次","type":"number","style":{"type":"plain","precision":0}},
+  {"name":"样本数量","type":"number","style":{"type":"plain","precision":0}},
+  {"name":"排序与采样方式","type":"text"},
+  {"name":"可用内容语言","type":"text"},
+  {"name":"运营机会","type":"text"},
+  {"name":"来源链接","type":"text","style":{"type":"url"}},
+  {"name":"反馈证据附件","type":"attachment"},
+  {"name":"置信度","type":"select","multiple":false,"options":[{"name":"高"},{"name":"中"},{"name":"低"}]},
+  {"name":"采样时间","type":"datetime","style":{"format":"yyyy-MM-dd HH:mm"}}
+]

@@ -1,0 +1,20 @@
+[
+  {"name":"素材拆解ID","type":"text"},
+  {"name":"商品ID","type":"text"},
+  {"name":"分析批次ID","type":"text"},
+  {"name":"素材类型","type":"select","multiple":false,"options":[{"name":"标题"},{"name":"主图"},{"name":"详情页"},{"name":"短视频"},{"name":"种草内容"},{"name":"直播间"}]},
+  {"name":"内容归属","type":"select","multiple":false,"options":[{"name":"竞品拆解"},{"name":"我方方案"}]},
+  {"name":"页面顺序","type":"number","style":{"type":"plain","precision":0}},
+  {"name":"模块任务","type":"text"},
+  {"name":"原始文案","type":"text"},
+  {"name":"视觉构图","type":"text"},
+  {"name":"核心卖点","type":"text"},
+  {"name":"转化机制","type":"text"},
+  {"name":"信任背书","type":"text"},
+  {"name":"风险说明","type":"text"},
+  {"name":"投放适配度","type":"number","style":{"type":"rating","icon":"star","min":1,"max":5}},
+  {"name":"测试优先级","type":"select","multiple":false,"options":[{"name":"P0"},{"name":"P1"},{"name":"P2"},{"name":"暂不测试"}]},
+  {"name":"来源链接","type":"text","style":{"type":"url"}},
+  {"name":"来源图片","type":"attachment"},
+  {"name":"生成成品","type":"attachment"}
+]

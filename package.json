@@ -1,0 +1,12 @@
+{
+  "name": "ecommerce-product-replication",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "test": "node --test test/manager.test.mjs test/quality.test.mjs",
+    "build": "node tools/build-release.mjs",
+    "audit": "node tools/audit-public.mjs"
+  }
+}

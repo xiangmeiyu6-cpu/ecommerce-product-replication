@@ -1,0 +1,4 @@
+interface:
+  display_name: "电商商品深拆与复刻"
+  short_description: "完整采集商品证据，按需深拆或复刻，并交付飞书供团队留存协作"
+  default_prompt: "使用 $ecommerce-product-replication 处理这个商品链接，先验证读取路径，再完整采集SKU、主图、详情、参数和分层评价，按我的要求仅采集、仅拆解或继续复刻，并将本批证据、图片和结果写入固定七表飞书库并读回验收；只有明确要求仅测试或其他交付方式时才缩小范围。"

@@ -1,0 +1,46 @@
+{
+  "template_name": "电商商品拆解库",
+  "template_id": "ecommerce-product-replication-feishu-base",
+  "template_version": "3.0.0",
+  "fixed_template": true,
+  "based_on": "用户已验证的电商商品拆解库七表结构",
+  "compatibility": {
+    "minimum_compatible_version": "3.0.0",
+    "require_exact_table_order": true,
+    "require_exact_field_order": true,
+    "allow_runtime_field_invention": false
+  },
+  "tables": [
+    {"name": "商品总览", "schema": "product-overview.json"},
+    {"name": "分析批次", "schema": "analysis-batch.json"},
+    {"name": "深度拆解", "schema": "deep-analysis.json"},
+    {"name": "证据台账", "schema": "evidence-ledger.json"},
+    {"name": "SKU与促销", "schema": "sku-promotion.json"},
+    {"name": "页面与素材", "schema": "page-creative.json"},
+    {"name": "用户反馈", "schema": "user-feedback.json"}
+  ],
+  "views": [
+    {"table": "商品总览", "name": "待确认与复检", "config": "views/product-pending.json", "filter": "views/product-pending-filter.json", "layout": "views/product-pending-layout.json"},
+    {"table": "分析批次", "name": "未完成批次", "config": "views/open-batches.json", "filter": "views/open-batches-filter.json", "layout": "views/open-batches-layout.json"},
+    {"table": "深度拆解", "name": "可复用打法", "config": "views/reusable-analysis.json", "filter": "views/reusable-analysis-filter.json", "layout": "views/reusable-analysis-layout.json"},
+    {"table": "证据台账", "name": "待补证", "config": "views/evidence-needed.json", "filter": "views/evidence-needed-filter.json", "layout": "views/evidence-needed-layout.json"},
+    {"table": "SKU与促销", "name": "主推与利润SKU", "config": "views/main-sku.json", "filter": "views/main-sku-filter.json", "layout": "views/main-sku-layout.json"},
+    {"table": "页面与素材", "name": "高优先级素材", "config": "views/high-priority-creative.json", "filter": "views/high-priority-creative-filter.json", "layout": "views/high-priority-creative-layout.json"},
+    {"table": "用户反馈", "name": "用户痛点与顾虑", "config": "views/user-pain.json", "filter": "views/user-pain-filter.json", "layout": "views/user-pain-layout.json"}
+  ],
+  "initialization": {
+    "command": "node scripts/init_feishu_base.mjs ensure --as user",
+    "validation_command": "node scripts/init_feishu_base.mjs validate --base-token <BASE_TOKEN> --as user",
+    "lock_file": "template-lock.json"
+  },
+  "v2_additions": [
+    "页面与评论图片直接上传到附件字段",
+    "SKU拆分划线价、页面售价、活动到手价与价格条件",
+    "用户反馈覆盖中评、差评、购买顾虑、采样方式和运营机会",
+    "分析批次记录写入数量、附件数量、证据缺口和交付状态",
+    "竞品素材与我方方案在同一表中通过内容归属区分",
+    "固定七表顺序、全部字段顺序、精选视图列顺序与排序规则",
+    "模板指纹防止不同安装环境临场自拟字段",
+    "一键初始化、复用与创建后读回校验"
+  ]
+}

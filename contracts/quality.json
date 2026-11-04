@@ -1,0 +1,18 @@
+{
+  "format": "epr-quality/v1",
+  "version": "1.0.0",
+  "required_surfaces": ["identity", "parameters", "skus", "main_images", "details", "video", "reviews", "qa"],
+  "analysis_modules": ["positioning", "audience_needs", "scenarios_price", "page_strategy", "offers", "feedback", "competitiveness", "advertising", "reuse_judgment"],
+  "claim_kinds": ["page_fact", "user_fact", "external_fact", "inference", "unknown", "recommendation"],
+  "rules": {
+    "sku_selected_price_evidence": true,
+    "ordered_main_and_detail_evidence": true,
+    "detail_end_verified": true,
+    "per_view_review_sampling_and_overlap": true,
+    "no_anonymous_buyer_count_inference": true,
+    "evidence_integrity": "sha256",
+    "content_review_required_for_analysis": true,
+    "remote_readback_required_for_delivery": true
+  },
+  "limits": "The validator checks structure, references, hashes and declared coverage. Visual reading, factual support and strategic usefulness still require documented content review. Platform access gaps are retained as partial capture; they do not pass complete-capture acceptance."
+}

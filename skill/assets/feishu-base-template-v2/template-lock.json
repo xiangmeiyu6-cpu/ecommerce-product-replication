@@ -1,0 +1,124 @@
+{
+  "template_id": "ecommerce-product-replication-feishu-base",
+  "template_version": "3.0.0",
+  "algorithm": "sha256-canonical-json",
+  "files": [
+    {
+      "path": "template-manifest.json",
+      "sha256": "3e65acb82f132250708ac45d61d97a6b6ff11246971707e876ba78fdc33662bc"
+    },
+    {
+      "path": "product-overview.json",
+      "sha256": "96a730192a1e41959153d190b4cb6cd2e4d4dbce4c9ab1642d637a9035deb5b3"
+    },
+    {
+      "path": "analysis-batch.json",
+      "sha256": "f9a1bac6ed224eaeeaa9bd9ddc1b9192a58d42d82fde7cbc37bf648354d29475"
+    },
+    {
+      "path": "deep-analysis.json",
+      "sha256": "183de7187238ce688fa61e86b33f38fe2872cbf35b485c81712ed06ee9df13f8"
+    },
+    {
+      "path": "evidence-ledger.json",
+      "sha256": "46f467dbb222f0e2b057ea8b427e9a7e4e0d8bd63bfba4ec4c2da4054f01bf60"
+    },
+    {
+      "path": "sku-promotion.json",
+      "sha256": "cb2a44be979775d1fcb851f9c01deaa86afb279fbf51645db39ac39d1a7bd801"
+    },
+    {
+      "path": "page-creative.json",
+      "sha256": "f19b556887e8bf81b67728e4ca0780da4d258898448084381246fd0df47ec209"
+    },
+    {
+      "path": "user-feedback.json",
+      "sha256": "5a19520efa2c436569ccbd64f614ccbccf3ea1cc4d7c711a48dc05d2606a3ebe"
+    },
+    {
+      "path": "views/product-pending.json",
+      "sha256": "bff7f3403980c1950ce12d0ab3287c918c520be19dafe9c03b78487f8d270a0a"
+    },
+    {
+      "path": "views/product-pending-filter.json",
+      "sha256": "809ec05dc670a8391dae4b9232a1511fdbf7049a0aff84fc251f350c13870e92"
+    },
+    {
+      "path": "views/product-pending-layout.json",
+      "sha256": "0c02c381598c523aaed5ca813dc0c067311a570bcfee1e9311558e7b8aec7feb"
+    },
+    {
+      "path": "views/open-batches.json",
+      "sha256": "3d570aa20b6c04361577d1db3831568fcc46e58374bb80f9c11c603e42275960"
+    },
+    {
+      "path": "views/open-batches-filter.json",
+      "sha256": "4ad1f51e178c37472f70095249488b1395242649846c0673edd78209101c4b1b"
+    },
+    {
+      "path": "views/open-batches-layout.json",
+      "sha256": "fa72c2d401ba98b4327da009e07b35b4faf3a0285af6b63ee6979c356322896b"
+    },
+    {
+      "path": "views/reusable-analysis.json",
+      "sha256": "f20bc6b4df35a8e76533a2d8767440ed5e3ae5655d875e1ae3a9505fac6f1a7b"
+    },
+    {
+      "path": "views/reusable-analysis-filter.json",
+      "sha256": "66de22127d0e622a9031d48535d57269a09055780c6d3e27fa7a752346975e9d"
+    },
+    {
+      "path": "views/reusable-analysis-layout.json",
+      "sha256": "6bceba73e7b6f577aef966c3584a379cb47409ca71e4fbda0f63b2c3760db94d"
+    },
+    {
+      "path": "views/evidence-needed.json",
+      "sha256": "b7d54e4d99fb1eaa05cff2d57d4d3891819aad91679500229e483abd19dbe225"
+    },
+    {
+      "path": "views/evidence-needed-filter.json",
+      "sha256": "15cacf2abce3383a20e810887a96410cd6e2f0f6fabacb86b1b672f9c6164115"
+    },
+    {
+      "path": "views/evidence-needed-layout.json",
+      "sha256": "1af0d5517045b5b7adf00704d5f099c368fe24901878df29fc881dc0c14a9d3c"
+    },
+    {
+      "path": "views/main-sku.json",
+      "sha256": "6499e57541c929390aeee77b6a4cd40805659456f4b04800c05ff14ad31ae695"
+    },
+    {
+      "path": "views/main-sku-filter.json",
+      "sha256": "ae1cd55672f0d71ea7027676a62601470a4fa3917543d3915676171db6326dc3"
+    },
+    {
+      "path": "views/main-sku-layout.json",
+      "sha256": "dc8474d5f2c8a3dfa58d72e54b7fe9d4782234e394493223d1d256e19768541c"
+    },
+    {
+      "path": "views/high-priority-creative.json",
+      "sha256": "7fcff95d3e4b60d4a0dcf89968ad1a526e848a80399c81a457891c644d1d6d19"
+    },
+    {
+      "path": "views/high-priority-creative-filter.json",
+      "sha256": "59c95759967628a20814e1780c4f7094602bb387cf2d38f722d2927723ccc4b0"
+    },
+    {
+      "path": "views/high-priority-creative-layout.json",
+      "sha256": "bbe88e055a199d5238e9c415b493766c27b2e1c65bbc409d439f3e2a4c125198"
+    },
+    {
+      "path": "views/user-pain.json",
+      "sha256": "1cfb6d1d05e2108f370b619ac30c714cb4d14f2346bb04f4cded214a47de5725"
+    },
+    {
+      "path": "views/user-pain-filter.json",
+      "sha256": "f2b96aa9bf72159cda6d0aa51419f4f1ccdbbc669a1ec4013e63801c1c335f79"
+    },
+    {
+      "path": "views/user-pain-layout.json",
+      "sha256": "f839a417f265891b8e6f0a3e52931f5549ad34c6f88ac7c2963e1bf232b45019"
+    }
+  ],
+  "aggregate_sha256": "dd8e74d3cd6006034d0302891f9e63712b526439dd3889c18d92dbbedbd1b514"
+}
