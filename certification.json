@@ -1,0 +1,36 @@
+{
+  "release": "1.0.0",
+  "source_commit": "703a04a1c8c9be0808aebb0a66155cf759f8decb",
+  "automated_tests": 28,
+  "workflow": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650",
+  "jobs": [
+    {
+      "name": "test (macos-latest, 24)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529759231"
+    },
+    {
+      "name": "test (macos-latest, 22)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529759623"
+    },
+    {
+      "name": "test (windows-latest, 24)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529759901"
+    },
+    {
+      "name": "test (windows-latest, 22)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529760632"
+    }
+  ],
+  "live_service_validation": {
+    "macos": "Earlier product workflow baseline; managed installation is verified separately",
+    "windows": "Browser login and live Feishu workflow pending on user device"
+  }
+}

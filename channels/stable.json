@@ -1,0 +1,6 @@
+{
+  "format": "epr-channel/v1",
+  "version": "1.0.0",
+  "artifact": "dist/releases/1.0.0.json",
+  "sha256": "2d55b8148f49aed4dfb0fa55f45e459e22d3dca7620d573847c3bb7e418d2f47"
+}
