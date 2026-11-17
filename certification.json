@@ -1,36 +1,40 @@
 {
-  "release": "1.0.0",
-  "source_commit": "703a04a1c8c9be0808aebb0a66155cf759f8decb",
-  "automated_tests": 28,
-  "workflow": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650",
+  "release": "1.0.1",
+  "source_commit": "8007e62e84df5c55a66b71e0c865bf9b9cc0c744",
+  "automated_tests": 42,
+  "workflow": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/43994911904",
   "jobs": [
     {
-      "name": "test (macos-latest, 24)",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529759231"
-    },
-    {
+      "id": 133744467193,
       "name": "test (macos-latest, 22)",
       "status": "completed",
       "conclusion": "success",
-      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529759623"
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/43994911904/job/133744467193"
     },
     {
+      "id": 133744467557,
       "name": "test (windows-latest, 24)",
       "status": "completed",
       "conclusion": "success",
-      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529759901"
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/43994911904/job/133744467557"
     },
     {
+      "id": 133744467675,
       "name": "test (windows-latest, 22)",
       "status": "completed",
       "conclusion": "success",
-      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/41816884650/job/126529760632"
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/43994911904/job/133744467675"
+    },
+    {
+      "id": 133744467870,
+      "name": "test (macos-latest, 24)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/xiangmeiyu6-cpu/ecommerce-product-replication/actions/runs/43994911904/job/133744467870"
     }
   ],
   "live_service_validation": {
-    "macos": "Earlier product workflow baseline; managed installation is verified separately",
-    "windows": "Browser login and live Feishu workflow pending on user device"
+    "macos": "Feishu authorization expired; live per-account setup and manual update pending user reauthorization",
+    "windows": "Automated account-isolation/template tests passed; real account/browser workflow not re-run"
   }
 }
