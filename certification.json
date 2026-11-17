@@ -34,7 +34,19 @@
     }
   ],
   "live_service_validation": {
-    "macos": "Feishu authorization expired; live per-account setup and manual update pending user reauthorization",
-    "windows": "Automated account-isolation/template tests passed; real account/browser workflow not re-run"
+    "macos": {
+      "status": "passed",
+      "date": "2026-11-17",
+      "identity": "authorized-user",
+      "template_version": "3.0.0",
+      "tables": 7,
+      "fields": 123,
+      "saved_views": 7,
+      "saved_view_filter_layout_sort": "readback-matched-template",
+      "initial_create": "passed",
+      "repeat_ensure_reused_same_base": "passed",
+      "business_records_written": 0
+    },
+    "windows": "macOS/Windows x Node 22/24 automated tests passed; real Windows account/browser workflow pending"
   }
 }
