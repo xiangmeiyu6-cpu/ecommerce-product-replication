@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node }}
           package-manager-cache: false
       - name: Regression tests
-        run: node --test test/manager.test.mjs test/quality.test.mjs
+        run: node --test test/manager.test.mjs test/quality.test.mjs test/feishu.test.mjs
       - name: Fixed Feishu template integrity
         run: node skill/scripts/validate_feishu_template.mjs
       - name: Public file audit

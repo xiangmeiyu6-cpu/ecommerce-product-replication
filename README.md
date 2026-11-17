@@ -28,7 +28,17 @@ Windows PowerShell 示例：
 node "$HOME/.codex/epr/epr.mjs" status
 ```
 
-两端各自登录商品网站和飞书。飞书 CLI 与相关 lark-base 技能需在本机可用；版本更新器不复制浏览器会话或飞书凭证。将指定 Base token、工作目录填入安装生成的 `config.local.json`，不要提交此文件。普通商品任务使用已配置的库。
+两端各自登录商品网站和飞书。飞书 CLI 与相关 lark-base 技能需在本机可用；版本更新器不复制浏览器会话或飞书凭证。用户完成飞书授权后，让 Codex 自动执行以下命令（Mac 和 Windows PowerShell 相同）：
+
+```sh
+node "$HOME/.codex/epr/epr.mjs" setup-feishu
+```
+
+首次使用会以当前用户身份创建自己的 `电商商品拆解库`，自动搭建固定的七张表、字段、选项和视图，并返回库 token；Codex 应解析返回库的实际 URL 并交给用户。后续复用当前飞书账号的绑定，切换账号会单独建库。无需用户先建表或提供库链接。不要使用教程作者、课堂示例或其他用户的库地址。
+
+如果用户主动指定现有团队库，在命令末尾加 `--base-token <用户明确指定的token>`，校验通过后绑定到该账号。换设备想继续写入同一个自己的库，也可这样绑定。没有本机绑定时，另一设备会自动创建自己的库。
+
+`config.local.json` 保留本机工作目录、更新偏好和按账号隔离的 `feishu_bindings`。旧 `base_token` 没有账号归属时保留但不自动复用。升级不删除旧库、业务记录或本机配置；访问已绑定库失败时报告问题，不新建替代库。此配置文件不上传公共仓库。
 
 ## 同步更新与回滚
 
@@ -59,7 +69,7 @@ Skill 的 `scripts/managed-task.mjs` 提供 `begin --workspace <批次目录> --
 ## 维护发布
 
 ```sh
-node --test test/manager.test.mjs test/quality.test.mjs
+node --test test/manager.test.mjs test/quality.test.mjs test/feishu.test.mjs
 node tools/audit-public.mjs
 node tools/build-release.mjs
 ```

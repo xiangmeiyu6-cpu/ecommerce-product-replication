@@ -32,16 +32,18 @@ The initializer uses the bundled manifest/schema files to initialize the library
 
 Use `lark-base` and `lark-cli` with `--as user` unless the user explicitly requests bot identity.
 
-1. If the user supplies a Base URL, resolve it and inspect its tables and fields.
-2. Otherwise resolve the title `电商商品拆解库` in the current user's space.
-3. Reuse one compatible owned Base and append a new product and analysis batch. Do not create one Base per product.
-4. If no compatible Base exists, create a new Base from the bundled v2 template.
-5. If multiple candidates cannot be uniquely resolved, ask the user to choose; do not guess.
-6. Never write analysis into another person's shared Base merely because its title matches.
+1. Read the current authorized identity through `lark-cli whoami --as user`. The initializer keys local bindings by identity, app, profile, brand and user open ID; switching accounts cannot reuse another account's binding.
+2. With no current-account binding, create the user's own Base from the bundled seven-table template automatically. Do not search by title: a shared Base can have the same title. Users do not need to manually build tables or paste a library URL.
+3. Reuse the compatible current-account binding on later tasks. An authentication, permission or compatibility failure stops with the exact stage; never treat it as permission to create a replacement library.
+4. Only a Base explicitly selected by the current user may be passed with `--base-token`; validate it, then bind it for that account. This supports intentional team collaboration. Tutorial links, example libraries and a copied legacy `base_token` are not explicit selection.
+5. Installation should invoke this setup after authorization; formal business writes invoke `ensure` again. Output the actual library URL so the user can find it. There is no need to ask for confirmation of the seven-table schema during an authorized setup/product task.
+6. The local `config.local.json` is outside releases and is never distributed. `feishu_bindings` contains only account coordinates and Base tokens, not credentials. Keep unrelated configuration and old `base_token` intact; ignore unbound tokens instead of migrating them by guesswork. On a second device, the user may explicitly supply their existing library URL to bind it there; without a binding that device creates its own library.
 
-For first-time creation, the initializer creates the first table and fields in one `+base-create` call, then creates the remaining six tables from the schema JSON. It creates the seven saved views, applies their filters, visible-field order, and sort rules, then reads the structure back. Use the exact field order in each JSON file.
+For a managed installation, the config path is derived from its manager root, not the current working directory. Standalone/source use defaults to the user's `.codex/epr/config.local.json`; `--config <path>` selects a custom local file. Never write mutable configuration into the immutable release.
 
-The CLI reports an empty title search as the exact validation error `No Base matched this title or keyword.`; the initializer treats only that response as no candidates. Authentication, permission and other errors must stop before creation. New-resource configuration uses actual table/view IDs and bounded retries for `not_found`. Creation calls are never automatically retried. The initializer saves `feishu-base-init-<BASE_TOKEN>.json` in the working directory as soon as Base creation returns, then records table/view IDs and completed steps. If a later step fails, inspect that checkpoint and continue the same Base; do not repeat `create` or an unresolved `ensure` and produce another library.
+The initializer creates the first table and fields in one `+base-create` call, then creates the remaining six tables from schema JSON. It applies all seven saved-view filters, visible-field order and sorts, and reads back structural compatibility. The fixed template stays `3.0.0`.
+
+A local lock prevents concurrent initialization. Before `base-create`, a pending binding is saved. An ambiguous creation response blocks another creation until inspected. Once the returned token is saved, a checkpoint under the manager's `feishu-init/` directory records the same Base. `ensure` resumes missing tables and views in it after interruption. Ambiguous table/view creation is reconciled by name in that already-bound Base; unresolved responses stop rather than blindly repeating POST. Creation requests are not automatically retried. Do not delete a binding or checkpoint to work around authentication or permission errors.
 
 ## Record model
 
@@ -130,7 +132,7 @@ The user-pain view includes neutral reviews, negative reviews, and purchase conc
 
 Verify three results separately: capture coverage, library structure, and this batch's records/attachments. Feishu retention is the team-accessible evidence and work record, not just a destination for a final prose summary.
 
-1. Resolve the intended Base and identity before writing. If multiple candidates match, stop resolution and ask for a specific Base URL. Do not choose the first result or create another library to avoid resolving ambiguity.
+1. Resolve the current identity and account-bound Base through `ensure` before writing. Without a binding, initialize the current user's library. Use an existing team Base only when explicitly selected by that user. Never select the first title-search match or a tutorial/example link.
 2. Reuse `商品ID` and `分析批次ID` when resuming. Read existing keys before writes; update matching atomic records and append only missing ones. Preserve other products and batches. Allocate a new batch only for a distinct recheck/version, not each retry.
 3. Set `飞书交付状态=写入中` while adding records and uploading attachments, using the bundled field options. The separate `状态` field uses `采集中/分析中/待确认/已完成/失败`; do not write `写入中` into it. Record content scope and capture gaps in existing fields.
 4. Reconcile expected atomic record keys with all records read back for this product/batch in each populated table, including pagination. Check missing keys, duplicates, SKU counts, review sampling and main/detail order; reading one record alone is insufficient for count reconciliation. Additionally inspect at least one populated record from each table for field correctness.

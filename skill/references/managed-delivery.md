@@ -6,6 +6,10 @@ For each product task, create a batch evidence directory, then run this Skill's 
 
 The manager checks the configured stable source at task entry. Compatible updates are staged and only activated while no task is active. Manual `check`, `update`, `rollback` and `doctor` use the installed launcher path. An interrupted task must be inspected and finished or abandoned before switching versions. Do not edit immutable installed release files. Repair the source release, test it and publish a new version.
 
+## Per-user Feishu setup
+
+After local Feishu user authorization, run `node <manager-root>/epr.mjs setup-feishu`. It calls the installed fixed-template initializer and stores a current-account binding in `config.local.json`; repeat calls reuse it. For an explicitly selected existing team Base, add `--base-token <BASE_TOKEN>`. Do not pass a token copied from a manual, maintainer or unbound legacy setting. Authentication requires the user; creating the standard seven tables is automatic once authorized. Updates preserve bindings and business data. A failed bound-library access never triggers a replacement Base.
+
 ## Evidence contract
 
 Use `format: epr-evidence/v1`, `scope: capture|analysis|replication` and these structures:
